@@ -158,10 +158,10 @@
 %       out in chapter \ref{sec:intro}.
 %    \begin{macrocode}
 \RequirePackage{minitoc}%
-\RequirePackage{natbib}%
+%\RequirePackage{natbib}%
 \RequirePackage[globalcitecopy,sectionbib]{bibunits}%
-\RequirePackage{acronym}% must be above glossary (for some reason!)
-\RequirePackage[style=long,number=none,toc=true]{glossary}% also requires package 'supertabular'
+%\RequirePackage{acronym}% must be above glossary (for some reason!)
+%\RequirePackage[style=long,number=none,toc=true]{glossary}% also requires package 'supertabular'
 \RequirePackage{chapterEnv}%
 \RequirePackage[notintoc]{nomencl}%
 \RequirePackage{setspace}%
@@ -251,14 +251,14 @@
 %           \label{subsubsec:natbib}
 %           We shall set up |natbib| to use the citation style selected.
 %    \begin{macrocode}
-    \citestyle{\cite@style}%
-    \bibpunct
-        {(} % Left parenthesis
-        {)} % Right parenthesis
-        {;} % Punctuation between multiple citations
-        {a} % Author-year style
-        {,} % Punctuation between author names and year
-        {,~}% Punctuation between multiple citations with a common author
+    %\citestyle{\cite@style}%
+%    \bibpunct
+%        {(} % Left parenthesis
+%        {)} % Right parenthesis
+%        {;} % Punctuation between multiple citations
+%        {a} % Author-year style
+%        {,} % Punctuation between author names and year
+%        {,~}% Punctuation between multiple citations with a common author
 %    \end{macrocode}
 %
 %^^A------------------------------------------------------------
@@ -325,11 +325,11 @@
 %           \label{subsubsec:glossary}
 %
 %    \begin{macrocode}
-    \renewcommand{\glossaryname}{Glossary of Terms}%  Change title of glossary
-    \setlength{\descriptionwidth}{110mm}%
-    \let\old@afterglossary\afterglossary%
-    \renewcommand{\afterglossary}{\adjustmtc\relax\addcontentsline{lof}{xchapter}{}\relax\addcontentsline{lot}{xchapter}{}\relax\old@afterglossary}
-    \makeglossary%
+%    \renewcommand{\glossaryname}{Glossary of Terms}%  Change title of glossary
+%    \setlength{\descriptionwidth}{110mm}%
+%    \let\old@afterglossary\afterglossary%
+%    \renewcommand{\afterglossary}{\adjustmtc\relax\addcontentsline{lof}{xchapter}{}\relax\addcontentsline{lot}{xchapter}{}\relax\old@afterglossary}
+%    \makeglossary%
 %    \end{macrocode}
 %
 %^^A------------------------------------------------------------
@@ -354,7 +354,7 @@
     \newcommand{\hidebu}{\@chapbufalse}%
     \addToStartOfChapter%
     {%
-        \acresetall%
+        %\acresetall%
         \begin{singlespace}%
             \if@chapmtc%
                 \minitoc%
@@ -546,7 +546,7 @@
                 \vspace*{\fill}
                 \par
                 \begin{center}
-                    {\othertitlefont \textsc{Ph.D.}}
+                    {\othertitlefont \textsc{MEng}}
                 \end{center}
                 \par
                 \vspace*{2cm}
@@ -579,7 +579,7 @@
                 \parbox{.63\linewidth}{\othertitlefont
                 Submitted in accordance to the requirements
                 of the University of York for the degree of
-                Doctor of Philosophy.}
+                Master of Engineering.}
             \end{flushright}
             \vspace*{\fill}
             \par
@@ -592,7 +592,7 @@
                 \iftp@logo
                     \epsfig{file=uoyths_logo.eps,width=.63\linewidth}
                 \else
-                    \textsc{Intelligent Systems Research Group}\\[1mm]
+                    \textsc{}\\[1mm]
                     {\othertitlefont Department of Electronics}\\[1mm]
                     {\othertitlefont University of York}\\[5mm]
                 \fi
@@ -621,11 +621,11 @@
 %
 %    \begin{macrocode}
 % Acronym Glossary Entry
-\newcommand{\glossac}[2]{%
-\ifthenelse{\equal{#2}{}}%
-    {\glossary{sort={#1},name={\string\acs{#1}},description={\string\acl{#1}.}}}%
-    {\glossary{sort={#1},name={\string\acs{#1}},description={\string\acl{#1}---#2}}}%
-}
+%\newcommand{\glossac}[2]{%
+%\ifthenelse{\equal{#2}{}}%
+%    {\glossary{sort={#1},name={\string\acs{#1}},description={\string\acl{#1}.}}}%
+%    {\glossary{sort={#1},name={\string\acs{#1}},description={\string\acl{#1}---#2}}}%
+%}
 %    \end{macrocode}
 %    \begin{macrocode}
 \newcommand{\printbibliography}{%
