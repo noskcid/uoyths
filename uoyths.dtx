@@ -502,6 +502,12 @@
 \tp@titletrue%
 \tp@logotrue%
 
+\newcommand*{\firstsupervisor}[1]{\gdef\@firstsupervisor{#1}}
+\newcommand*{\secondsupervisor}[1]{\gdef\@secondsupervisor{#1}}
+\firstsupervisor{Sup 1}
+\secondsupervisor{Sup 2}
+
+
 \providecommand*{\sectfont}{\relax}
 %    \end{macrocode}
 %^^A------------------------------------------------------------
@@ -574,7 +580,7 @@
                 \largetitlefont \@title
             \end{flushright}
             \par
-            \vspace*{\fill}
+			\vspace*{\fill}
             \begin{flushright}
                 \parbox{.63\linewidth}{\othertitlefont
                 Submitted in accordance to the requirements
@@ -582,21 +588,31 @@
                 Master of Engineering.}
             \end{flushright}
             \vspace*{\fill}
+						
             \par
             \begin{flushright}
                 {\authorfont \@author}\\[2mm]
                 {\othertitlefont \@date}\\[1mm]
-                \rule{.63\linewidth}{0.8mm}\\[0mm]
-                \vspace*{3mm}
+                                \vspace*{3mm}
+			\end{flushright}
 
+			\begin{flushright}
+				\othertitlefont
+                \parbox{.63\linewidth}{\noindent First Supervisor: \hfill \@firstsupervisor}
+				\parbox{.63\linewidth}{\noindent Second Supervisor: \hfill \@secondsupervisor}
+			\end{flushright}
+
+			\begin{flushright}
+				\rule{.63\linewidth}{0.8mm}\\[0mm]
                 \iftp@logo
-                    \epsfig{file=uoyths_logo.eps,width=.63\linewidth}
+                    \epsfig{file=uoyths_logo_new.eps,width=.63\linewidth}
                 \else
                     \textsc{}\\[1mm]
                     {\othertitlefont Department of Electronics}\\[1mm]
                     {\othertitlefont University of York}\\[5mm]
                 \fi
             \end{flushright}
+
             \par
         \fi
 
